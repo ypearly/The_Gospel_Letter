@@ -82,14 +82,17 @@ h2 {
 }
 
 
-/* 목록 스타일 */
-ol {
-    padding-left: 20px;
+/* 목록 스타일 수정 */
+ol, ul { /* ul 태그에 대한 스타일도 추가 */
+    list-style: none; /* 목록 기호(번호, 점 등) 제거 */
+    padding-left: 0; /* 목록의 왼쪽 기본 들여쓰기 제거 */
     margin-left: 0;
 }
 
 li {
     margin-bottom: 15px;
+    /* 만약 <li>에도 들여쓰기가 남아있다면: */
+    /* padding-left: 0; */ 
 }
 
 li p {
