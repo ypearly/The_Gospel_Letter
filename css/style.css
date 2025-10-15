@@ -1,15 +1,12 @@
 /* 기본 및 모바일 최적화 스타일 */
 body {
-    /* 폰트 크기를 모바일 기준으로 설정 */
     font-size: 16px; 
     font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', Arial, sans-serif;
     line-height: 1.6;
-    /* 모바일에서는 좌우 여백을 줄여 콘텐츠 영역을 최대화 */
     padding: 10px; 
     max-width: 800px;
     margin: 0 auto;
     color: #333;
-    /* 터치 환경에서 자연스러운 스크롤 허용 */
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
@@ -41,7 +38,7 @@ h2 {
     text-decoration: underline;
     display: inline-block;
     margin-right: 5px;
-    padding: 5px 0; /* 모바일 터치 영역 확장 */
+    padding: 5px 0; 
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -53,17 +50,21 @@ h2 {
     margin-top: 5px;
     margin-bottom: 15px;
     font-size: 1.0em;
-    line-height: 1.7;
+    line-height: 1.6; /* 줄 간격은 적당히 유지 */
     white-space: pre-wrap;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+    
+    /* ***** 요청 사항 반영: 왼쪽 정렬 확인 ***** */
+    text-align: left; /* 기본값이지만 명시적으로 설정하여 확실히 왼쪽 정렬 */
 }
 
-/* * ***** 이 부분을 수정합니다. *****
- * 성경 구절 내용 안의 단락 스타일 (절 구분)
- * 모든 단락의 마진을 0으로 설정하여 절 사이에 간격을 띄우지 않습니다. 
+/* * ***** 요청 사항 반영: 절 간격 최소화 *****
+ * .bible-content 내부의 <p> 태그(각 절)에 대한 스타일 
  */
 .bible-content p {
-    margin: 0; /* 단락(p 태그)의 상하 마진을 0으로 설정 */
+    margin: 0 !important; /* 모든 마진(상,하)을 0으로 설정하여 간격 제거 */
+    padding: 0; /* 패딩도 0으로 설정 */
+    /* 절 사이의 줄 바꿈은 <p> 태그의 display: block 속성 덕분에 자동으로 유지됩니다. */
 }
 
 /* 목록 스타일 */
