@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시리즈 강좌 목록</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* 목차 전용 스타일 */
+        .toc-list {
+            list-style: none; /* 목록 기호 제거 */
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .toc-list li {
+            margin-bottom: 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .toc-list a {
+            font-size: 1.1em;
+            display: block;
+            padding: 15px 5px; /* 모바일 터치 영역 확장 */
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .toc-list a:hover,
+        .toc-list a:focus {
+            background-color: #f7f7f7; /* 클릭/터치 피드백 */
+        }
+        
+        /* 현재 활성화된 강좌 표시 (선택 사항) */
+        .toc-list .current-lesson a {
+            color: #0066cc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[시리즈 제목] 강좌 목록</h1>
+    </header>
+
+    <main>
+        <ul class="toc-list">
+            <li><a href="lesson1.html">1강 왜 인간은 행복이 없을까요?</a></li>
+            
+            <li><a href="lesson2.html">2강 [다음 강좌 제목]</a></li>
+            <li><a href="lesson3.html">3강 [다음 강좌 제목]</a></li>
+            <li><a href="lesson4.html">4강 [다음 강좌 제목]</a></li>
+            <li><a href="lesson5.html">5강 [다음 강좌 제목]</a></li>
+            <li><a href="lesson6.html">6강 [다음 강좌 제목]</a></li>
+            <li><a href="lesson7.html">7강 [다음 강좌 제목]</a></li>
+            <li><a href="lesson8.html">8강 [다음 강좌 제목]</a></li>
+            <li><a href="lesson9.html">9강 [다음 강좌 제목]</a></li>
+            <li><a href="lesson10.html">10강 [마지막 강좌 제목]</a></li>
+        </ul>
+    </main>
+    
+    </body>
+</html>
