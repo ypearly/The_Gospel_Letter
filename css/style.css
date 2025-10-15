@@ -42,30 +42,45 @@ h2 {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* 성경 구절 내용 스타일 (숨겨질 내용) */
 .bible-content {
     background-color: #f0f8ff;
     border-left: 5px solid #0066cc;
-    padding: 12px;
+    /* 패딩은 유지하여 내용과 경계선 사이에 공간 확보 */
+    padding: 12px; 
     margin-top: 5px;
     margin-bottom: 15px;
     font-size: 1.0em;
-    line-height: 1.6; /* 줄 간격은 적당히 유지 */
+    line-height: 1.6;
     white-space: pre-wrap;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
     
-    /* ***** 요청 사항 반영: 왼쪽 정렬 확인 ***** */
-    text-align: left; /* 기본값이지만 명시적으로 설정하여 확실히 왼쪽 정렬 */
+    /* ***** 중요 수정: 마진 및 정렬 강제 ***** */
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left; 
 }
 
-/* * ***** 요청 사항 반영: 절 간격 최소화 *****
- * .bible-content 내부의 <p> 태그(각 절)에 대한 스타일 
+/* * ***** 중요 수정: 절 간격 최소화 및 정렬 보장 *****
+ * .bible-content 내부의 <p> 태그에 대한 스타일 
  */
 .bible-content p {
-    margin: 0 !important; /* 모든 마진(상,하)을 0으로 설정하여 간격 제거 */
-    padding: 0; /* 패딩도 0으로 설정 */
-    /* 절 사이의 줄 바꿈은 <p> 태그의 display: block 속성 덕분에 자동으로 유지됩니다. */
+    /* 마진을 0으로 설정하여 절 사이의 세로 간격을 완벽하게 제거 */
+    margin: 0 !important; 
+    padding: 0; 
+    /* 텍스트가 왼쪽으로 정렬되도록 한 번 더 명시 (단일 구절 <p>에도 적용됨) */
+    text-align: left; 
 }
+
+/* * ***** 새로운 해결책: 단일 구절 텍스트에 대한 추가 처리 *****
+ * <p> 태그로 감싸지 않은 순수한 텍스트에 간격이 생기는 것을 방지
+ * (대부분의 브라우저는 이 경우 간격을 만들지 않으나, 만약을 대비)
+ */
+.bible-content::before, .bible-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 /* 목록 스타일 */
 ol {
